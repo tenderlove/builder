@@ -47,10 +47,6 @@ module Kernel
   end
 
   def double_late_addition
-    11
-  end
-
-  def double_late_addition
     22
   end
 end

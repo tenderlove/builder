@@ -79,7 +79,7 @@ class TestMarkup < Builder::Test
     assert_equal %{<ref id="H&amp;R"/>}, @xml.target!
   end
 
- def test_symbol_attributes_are_unescaped_by_default
+  def test_symbol_attributes_are_unescaped_by_default
     @xml.ref(:id => :"H&amp;R")
     assert_equal %{<ref id="H&amp;R"/>}, @xml.target!
   end
