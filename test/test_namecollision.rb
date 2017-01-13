@@ -10,10 +10,10 @@
 # above copyright notice is included.
 #++
 
-require 'test/unit'
+require 'helper'
 require 'builder/xchar'
 
-class TestNameCollisions < Test::Unit::TestCase
+class TestNameCollisions < Builder::Test
   module Collide
     def xchr
     end

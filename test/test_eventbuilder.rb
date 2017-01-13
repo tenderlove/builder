@@ -10,12 +10,12 @@
 # above copyright notice is included.
 #++
 
-require 'test/unit'
-require 'test/preload'
+require 'helper'
+require 'preload'
 require 'builder'
 require 'builder/xmlevents'
 
-class TestEvents < Test::Unit::TestCase
+class TestEvents < Builder::Test
 
   class Target
     attr_reader :events

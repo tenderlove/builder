@@ -9,11 +9,11 @@
 # above copyright notice is included.
 #++
 
-require 'test/unit'
-require 'test/preload'
+require 'helper'
+require 'preload'
 require 'builder'
 
-class TestMethodCaching < Test::Unit::TestCase
+class TestMethodCaching < Builder::Test
 
   # We can directly ask if xml object responds to the cache_me or
   # do_not_cache_me methods because xml is derived from BasicObject

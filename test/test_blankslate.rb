@@ -10,8 +10,8 @@
 # above copyright notice is included.
 #++
 
-require 'test/unit'
-require 'test/preload'
+require 'helper'
+require 'preload'
 require 'blankslate'
 require 'stringio'
 
@@ -80,7 +80,7 @@ end
 ######################################################################
 # Test case for blank slate.
 #
-class TestBlankSlate < Test::Unit::TestCase
+class TestBlankSlate < Builder::Test
   def setup
     @bs = BlankSlate.new
   end

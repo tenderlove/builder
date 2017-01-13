@@ -13,7 +13,7 @@
 
 #!/usr/bin/env ruby
 
-require 'test/unit'
+require 'helper'
 require 'builder/xchar'
 
 if String.method_defined?(:encode)
@@ -35,7 +35,7 @@ if String.method_defined?(:encode)
   end
 end
 
-class TestXmlEscaping < Test::Unit::TestCase
+class TestXmlEscaping < Builder::Test
   REPLACEMENT_CHAR = Builder::XChar::REPLACEMENT_CHAR.to_xs
 
   def test_ascii

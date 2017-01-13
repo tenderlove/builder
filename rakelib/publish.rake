@@ -1,5 +1,6 @@
 # Optional publish task for Rake
 
+begin
 require 'rake/contrib/sshpublisher'
 require 'rake/contrib/rubyforgepublisher'
 
@@ -14,4 +15,6 @@ publisher.add Rake::SshFilePublisher.new(
 desc "Publish the Documentation to RubyForge."
 task :publish => [:rdoc] do
   publisher.upload
+end
+rescue LoadError
 end
