@@ -37,8 +37,8 @@ simple to do.  Currently the following builder objects are supported:
     '--main' << 'README.rdoc' <<
     '--line-numbers'
 
-  s.author = "Jim Weirich"
-  s.email = "jim.weirich@gmail.com"
-  s.homepage = "http://onestepback.org"
+  s.authors = ["Jim Weirich", "Aaron Patterson"]
+  s.email = "aron.patterson@gmail.com"
+  s.homepage = "https://github.com/tenderlove/builder"
   s.license = 'MIT'
 end
