@@ -271,6 +271,12 @@ module Builder
       _special("<![CDATA[", "]]>", text.gsub(']]>', ']]]]><![CDATA[>'), nil)
     end
 
+    def cdata_value!(open, close, text)
+      _ensure_no_block ::Kernel::block_given?
+      _special(open, close, "<![CDATA[#{text.gsub(']]>', ']]]]><![CDATA[>')}]]>", nil)
+    end
+
+
     private
 
     # NOTE: All private methods of a builder object are prefixed when
