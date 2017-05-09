@@ -271,11 +271,10 @@ module Builder
       _special("<![CDATA[", "]]>", text.gsub(']]>', ']]]]><![CDATA[>'), nil)
     end
 
-    def cdata_value!(open, close, text)
+    def cdata_value!(open, text)
       _ensure_no_block ::Kernel::block_given?
-      _special(open, close, "<![CDATA[#{text.gsub(']]>', ']]]]><![CDATA[>')}]]>", nil)
+      _special("<#{open}>", "</#{open}>", "<![CDATA[#{text.gsub(']]>', ']]]]><![CDATA[>')}]]>", nil)
     end
-
 
     private
 
