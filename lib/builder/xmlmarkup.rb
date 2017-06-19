@@ -192,7 +192,7 @@ module Builder
       @quote = (options[:quote] == :single) ? "'" : '"'
       @explicit_nil_handling = options[:explicit_nil_handling]
       super(indent, margin)
-      @target = options[:target] || ""
+      @target = options[:target] || "".dup
     end
 
     # Return the target of the builder.

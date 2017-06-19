@@ -499,7 +499,7 @@ class TestIndentedXmlMarkup < Builder::Test
         $KCODE = encoding
         string
       elsif encoding == 'UTF8'
-        string.force_encoding('UTF-8')
+        string.dup.force_encoding('UTF-8')
       else
         string
       end
@@ -580,7 +580,7 @@ class TestIndentedXmlMarkup < Builder::Test
     end
 
     def pop_text
-      result = ''
+      result = ''.dup
       while ! @handler.events.empty? && @handler.events[0][0] == :text
 	result << @handler.events[0][1]
 	@handler.events.shift
