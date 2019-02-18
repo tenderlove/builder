@@ -417,6 +417,11 @@ class TestSpecialMarkup < Builder::Test
     assert_equal "<![CDATA[TEST]]>\n", @xml.target!
   end
 
+  def test_cdata_value
+    @xml.cdata_value!("content:encoded", "<p>TEST</p>")
+    assert_equal "<content:encoded><![CDATA[<p>TEST</p>]]></content:encoded>\n", @xml.target!
+  end
+
   def test_cdata_with_ampersand
     @xml.cdata!("TEST&CHECK")
     assert_equal "<![CDATA[TEST&CHECK]]>\n", @xml.target!
