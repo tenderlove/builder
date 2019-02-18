@@ -245,8 +245,8 @@ incompatibility are:
 | Description | Link |
 | :----: | :----: |
 | Documents           | http://builder.rubyforge.org/ |
-| Github Clone        | git://github.com/jimweirich/builder.git |
-| Issue / Bug Reports | https://github.com/jimweirich/builder/issues?state=open |
+| Github Clone        | git://github.com/tenderlove/builder.git |
+| Issue / Bug Reports | https://github.com/tenderlove/builder/issues?state=open |
 
 ## Contact
 
