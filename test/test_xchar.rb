@@ -24,7 +24,7 @@ if String.method_defined?(:encode)
     def to_xs(escape=true)
       raise NameError.new('to_xs') unless caller[0].index(__FILE__)
 
-      result = Builder::XChar.encode(self)
+      result = Builder::XChar.encode(self.dup)
       if escape
         result.gsub(/[^\u0000-\u007F]/) {|c| "&##{c.ord};"}
       else

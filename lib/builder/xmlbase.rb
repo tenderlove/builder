@@ -52,7 +52,7 @@ module Builder
           attrs ||= {}
           attrs.merge!({:nil => true}) if explicit_nil_handling?
         else
-          text ||= ''
+          text ||= ''.dup
           text << arg.to_s
         end
       end
