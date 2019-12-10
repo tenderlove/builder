@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Rakefile for rake        -*- ruby -*-
 
 # Copyright 2004, 2005, 2006 by Jim Weirich (jim@weirichhouse.org).
