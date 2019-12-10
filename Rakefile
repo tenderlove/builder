@@ -105,7 +105,6 @@ simple to do.  Currently the following builder objects are supported:
 
     s.test_files = PKG_FILES.select { |fn| fn =~ /^test\/test/ }
 
-    s.has_rdoc = true
     s.extra_rdoc_files = rd.rdoc_files.reject { |fn| fn =~ /\.rb$/ }.to_a
     s.rdoc_options <<
       '--title' <<  'Builder -- Easy XML Building' <<
@@ -136,7 +135,6 @@ classes that make heavy use of method_missing.
 
     s.test_files = PKG_FILES.select { |fn| fn =~ /^test\/test/ }
 
-    s.has_rdoc = true
     s.extra_rdoc_files = rd.rdoc_files.reject { |fn| fn =~ /\.rb$/ }.to_a
     s.rdoc_options <<
       '--title' <<  'BlankSlate -- Base Class for building proxies.' <<
