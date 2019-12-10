@@ -105,12 +105,6 @@ class TestBlankSlate < Builder::Test
     end
   end
 
-  def test_targetted_private_methods_are_undefined_during_instance_eval
-    assert_raise(NoMethodError, NameError) do
-      @bs.instance_eval do self.puts "HI" end
-    end
-  end
-
   def test_untargetted_private_methods_are_defined_during_instance_eval
     oldstdout = $stdout
     $stdout = StringIO.new
