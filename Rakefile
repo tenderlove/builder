@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Rakefile for rake        -*- ruby -*-
 
 # Copyright 2004, 2005, 2006 by Jim Weirich (jim@weirichhouse.org).
@@ -43,7 +44,7 @@ task :tu => [:test_units]
 
 Rake::TestTask.new("test_units") do |t|
   t.test_files = FileList['test/test*.rb']
-  t.libs << "."
+  t.libs << "." << "test"
   t.verbose = false
 end
 
@@ -104,7 +105,6 @@ simple to do.  Currently the following builder objects are supported:
 
     s.test_files = PKG_FILES.select { |fn| fn =~ /^test\/test/ }
 
-    s.has_rdoc = true
     s.extra_rdoc_files = rd.rdoc_files.reject { |fn| fn =~ /\.rb$/ }.to_a
     s.rdoc_options <<
       '--title' <<  'Builder -- Easy XML Building' <<
@@ -135,7 +135,6 @@ classes that make heavy use of method_missing.
 
     s.test_files = PKG_FILES.select { |fn| fn =~ /^test\/test/ }
 
-    s.has_rdoc = true
     s.extra_rdoc_files = rd.rdoc_files.reject { |fn| fn =~ /\.rb$/ }.to_a
     s.rdoc_options <<
       '--title' <<  'BlankSlate -- Base Class for building proxies.' <<

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require './lib/builder/version'
 
 PKG_VERSION = Builder::VERSION

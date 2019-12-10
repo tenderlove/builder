@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Optional publish task for Rake
 
 begin

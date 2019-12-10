@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 module Tags
   extend Rake::DSL if defined?(Rake::DSL)

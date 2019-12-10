@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 # encoding: us-ascii
 
 #--
@@ -22,7 +23,7 @@ if String.method_defined?(:encode)
 
     # shim method for testing purposes
     def to_xs(escape=true)
-      raise NameError.new('to_xs') unless caller[0].index(__FILE__)
+      # raise NameError.new('to_xs') unless caller[0].index(__FILE__)
 
       result = Builder::XChar.encode(self.dup)
       if escape
@@ -70,9 +71,15 @@ class TestXmlEscaping < Builder::Test
   end
 
   def test_utf8_verbatim
-    assert_equal "\xE2\x80\x99", "\xE2\x80\x99".to_xs(false)  # right single quote
-    assert_equal "\xC2\xA9",  "\xC2\xA9".to_xs(false)         # copy
-    assert_equal "\xC2\xA9&amp;\xC2\xA9",
-      "\xC2\xA9&\xC2\xA9".to_xs(false)                        # copy with ampersand
+    assert_equal binary("\xE2\x80\x99"), "\xE2\x80\x99".to_xs(false)  # right single quote
+    assert_equal binary("\xC2\xA9"),  "\xC2\xA9".to_xs(false)         # copy
+    assert_equal binary("\xC2\xA9&amp;\xC2\xA9"),
+      "\xC2\xA9&\xC2\xA9".to_xs(false)                                # copy with ampersand
+  end
+
+  private
+
+  def binary(string)
+    string.dup.force_encoding(Encoding::BINARY)
   end
 end
