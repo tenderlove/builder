@@ -155,7 +155,7 @@ module Builder
   #
   #     xml_builder = Builder::XmlMarkup.new
   #     xml_builder.div { |xml|
-  #       xml.stong("text")
+  #       xml.strong("text")
   #     }
   #
   class XmlMarkup < XmlBase
