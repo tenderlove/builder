@@ -42,4 +42,11 @@ simple to do.  Currently the following builder objects are supported:
   s.email = "aron.patterson@gmail.com"
   s.homepage = "https://github.com/tenderlove/builder"
   s.license = 'MIT'
+  s.metadata = {
+    "bug_tracker_uri"   => "#{s.homepage}/issues",
+    "changelog_uri"     => "#{s.homepage}/blob/master/CHANGES",
+    "documentation_uri" => "https://www.rubydoc.info/gems/builder/#{s.version}",
+    "homepage_uri"      => s.homepage,
+    "source_code_uri"   => "#{s.homepage}/tree/v#{s.version}"
+  }
 end
