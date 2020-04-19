@@ -43,7 +43,7 @@ task :ta => [:test_all]
 task :tu => [:test_units]
 
 Rake::TestTask.new("test_units") do |t|
-  t.test_files = FileList['test/test*.rb']
+  t.test_files = FileList['test/*_test.rb']
   t.libs << "." << "test"
   t.verbose = false
 end
