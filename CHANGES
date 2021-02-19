@@ -1,5 +1,9 @@
 = Change Log
 
+== Version 3.2.4 (2019-12-10)
+
+* Strings were frozen by adding `# frozen_string_literal: true` to all files
+
 == Version 3.2.3 (2017-01-13)
 
 * Support for Ruby 2.4
