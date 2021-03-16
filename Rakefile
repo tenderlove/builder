@@ -23,7 +23,7 @@ require './lib/builder/version'
 # Determine the current version of the software
 
 CLOBBER.include('pkg', 'html')
-CLEAN.include('pkg/builder-*').include('pkg/blankslate-*').exclude('pkg/*.gem')
+CLEAN.include('pkg/builder-*').exclude('pkg/*.gem')
 
 PKG_VERSION = Builder::VERSION
 
@@ -77,11 +77,6 @@ PKG_FILES.exclude('test/test_cssbuilder.rb')
 PKG_FILES.exclude('lib/builder/css.rb')
 PKG_FILES.exclude('TAGS')
 
-BLANKSLATE_FILES = FileList[
-  'lib/blankslate.rb',
-  'test/test_blankslate.rb'
-]
-
 if ! defined?(Gem)
   puts "Package Target requires RubyGEMs"
 else
@@ -117,49 +112,13 @@ simple to do.  Currently the following builder objects are supported:
     s.license = 'MIT'
   end
 
-  blankslate_spec = Gem::Specification.new do |s|
-
-    #### Basic information.
-
-    s.name = 'blankslate'
-    s.version = PKG_VERSION
-    s.summary = "Blank Slate base class."
-    s.description = %{\
-BlankSlate provides a base class where almost all of the methods from Object and
-Kernel have been removed.  This is useful when providing proxy object and other
-classes that make heavy use of method_missing.
-}
-
-    s.files = BLANKSLATE_FILES.to_a
-    s.require_path = 'lib'
-
-    s.test_files = PKG_FILES.select { |fn| fn =~ /^test\/test/ }
-
-    s.extra_rdoc_files = rd.rdoc_files.reject { |fn| fn =~ /\.rb$/ }.to_a
-    s.rdoc_options <<
-      '--title' <<  'BlankSlate -- Base Class for building proxies.' <<
-      '--main' << 'README.rdoc' <<
-      '--line-numbers'
-
-    s.author = "Jim Weirich"
-    s.email = "jim.weirich@gmail.com"
-    s.homepage = "http://onestepback.org"
-    s.license = 'MIT'
-  end
-
   namespace 'builder' do
     Gem::PackageTask.new(spec) do |t|
       t.need_tar = false
     end
   end
 
-  namespace 'blankslate' do
-    Gem::PackageTask.new(blankslate_spec) do |t|
-      t.need_tar = false
-    end
-  end
-
-  task :package => [:remove_tags, 'builder:package', 'blankslate:package']
+  task :package => [:remove_tags, 'builder:package']
 end
 
 task :remove_tags do

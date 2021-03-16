@@ -11,7 +11,6 @@
 #++
 
 require 'helper'
-require 'preload'
 require 'builder'
 
 class TestMethodCaching < Builder::Test
