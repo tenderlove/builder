@@ -1,8 +1,6 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require 'builder/blankslate'
-
 module Builder
 
   # Generic error for builder
@@ -10,7 +8,7 @@ module Builder
 
   # XmlBase is a base class for building XML builders.  See
   # Builder::XmlMarkup and Builder::XmlEvents for examples.
-  class XmlBase < BlankSlate
+  class XmlBase < BasicObject
 
     class << self
       attr_accessor :cache_method_calls

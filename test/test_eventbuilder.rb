@@ -12,7 +12,6 @@
 #++
 
 require 'helper'
-require 'preload'
 require 'builder'
 require 'builder/xmlevents'
 
